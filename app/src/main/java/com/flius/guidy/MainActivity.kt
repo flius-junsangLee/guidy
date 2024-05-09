@@ -5,12 +5,14 @@ import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ListView
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var textView: TextView
     private lateinit var ProfileListView: ListView
     private lateinit var addprofile: EditText
     private lateinit var adapter: ArrayAdapter<String>
@@ -38,7 +40,6 @@ class MainActivity : AppCompatActivity() {
         ProfileListView.adapter = adapter
 
         ProfileListView.setOnItemClickListener { parent, view, position, id ->
-            val selectedItem = parent.adapter.getItem(position).toString()
            profileDetail(position)
         }
 
@@ -56,7 +57,11 @@ class MainActivity : AppCompatActivity() {
     }
     private fun profileDetail(position: Int){
         when (position) {
-            0 -> setContentView(R.layout.activity_profile1)
+            0 -> {
+                setContentView(R.layout.activity_profile1)
+                val textView = findViewById<TextView>(R.id.tv_profile)
+                textView.text = "프로필 예시입니다."
+            }
             //1 -> setContentView(R.layout.layout_for_item_2)
             //2 -> setContentView(R.layout.layout_for_item_3)
             //3 -> setContentView(R.layout.layout_for_item_4)
