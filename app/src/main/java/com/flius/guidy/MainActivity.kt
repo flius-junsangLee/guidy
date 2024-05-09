@@ -25,7 +25,11 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        profileList()
 
+    }
+
+    private fun profileList(){
         ProfileListView = findViewById(R.id.PostListView)
         addprofile = findViewById(R.id.tv_addItem)
         addButton = findViewById(R.id.bt_profileAdd)
@@ -34,7 +38,6 @@ class MainActivity : AppCompatActivity() {
         ProfileListView.adapter = adapter
 
         setupAddButtonListener()
-
     }
     private fun setupAddButtonListener() {
         addButton.setOnClickListener {
