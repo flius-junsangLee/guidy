@@ -5,7 +5,6 @@ import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ListView
-import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -40,7 +39,7 @@ class MainActivity : AppCompatActivity() {
 
         ProfileListView.setOnItemClickListener { parent, view, position, id ->
             val selectedItem = parent.adapter.getItem(position).toString()
-           profileDetail()
+           profileDetail(position)
         }
 
         setupAddButtonListener()
@@ -55,13 +54,16 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-    fun profileDetail(){
-        setContentView(R.layout.activity_profile)
-        val tv_profileEX: TextView = findViewById(R.id.tv_profile)
-
-
+    private fun profileDetail(position: Int){
+        when (position) {
+            0 -> setContentView(R.layout.activity_profile1)
+            //1 -> setContentView(R.layout.layout_for_item_2)
+            //2 -> setContentView(R.layout.layout_for_item_3)
+            //3 -> setContentView(R.layout.layout_for_item_4)
+            //else -> setContentView(R.layout.default_layout)
+        }
     }
-    }
+}
 class ListDataManager {
     private val items = mutableListOf("때니", "빡기성", "민재몬", "이준상")
 
