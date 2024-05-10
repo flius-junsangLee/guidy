@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var ProfileListView: ListView
     private lateinit var addprofile: EditText
     private lateinit var adapter: ArrayAdapter<String>
-    private lateinit var addButton: Button
+    private lateinit var Button: Button
     private val dataManager = ListDataManager()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
     private fun profileList(){
         ProfileListView = findViewById(R.id.PostListView)
         addprofile = findViewById(R.id.tv_addItem)
-        addButton = findViewById(R.id.bt_profileAdd)
+        Button = findViewById(R.id.bt_profileAdd)
 
         adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, dataManager.getItems())
         ProfileListView.adapter = adapter
@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
         setupAddButtonListener()
     }
     private fun setupAddButtonListener() {
-        addButton.setOnClickListener {
+        Button.setOnClickListener {
             val newItem = addprofile.text.toString()
             if (newItem.isNotEmpty()) {
                 dataManager.addItem(newItem)
@@ -60,31 +60,53 @@ class MainActivity : AppCompatActivity() {
         when (position) {
             0 -> {
                 setContentView(R.layout.activity_post1)
-                val textView = findViewById<TextView>(R.id.tv_post1)
-                textView.text = "게시 예시입니다1."
+                textView = findViewById<TextView>(R.id.tv_post1)
+                textView.text = "게시물 예시입니다1."
                 val button: Button = findViewById(R.id.bt_review1)
+                button.text = "Review"
                 button.setOnClickListener {
                     setContentView(R.layout.activity_review1)
+                    textView = findViewById<TextView>(R.id.tv_review1)
+                    textView.text = "리뷰페이지 예시."
                 }
             }
 
             1 -> {
                 setContentView(R.layout.activity_post2)
-                val textView = findViewById<TextView>(R.id.tv_post2)
+                textView = findViewById<TextView>(R.id.tv_post2)
                 textView.text = "게시물 예시입니다2."
-
+                val button: Button = findViewById(R.id.bt_review2)
+                button.text = "Review"
+                button.setOnClickListener {
+                    setContentView(R.layout.activity_review2)
+                    textView = findViewById<TextView>(R.id.tv_review2)
+                    textView.text = "리뷰페이지 예시."
+                }
             }
 
             2 -> {
                 setContentView(R.layout.activity_post3)
-                val textView = findViewById<TextView>(R.id.tv_post2)
+                textView = findViewById<TextView>(R.id.tv_post3)
                 textView.text = "게시물 예시입니다3."
+                val button: Button = findViewById(R.id.bt_review3)
+                button.text = "Review"
+                button.setOnClickListener {
+                    setContentView(R.layout.activity_review3)
+                    textView = findViewById<TextView>(R.id.tv_review3)
+                    textView.text = "리뷰페이지 예시."
+                }
             }
-            3 ->{
+            3 -> {
                 setContentView(R.layout.activity_post4)
-                val textView = findViewById<TextView>(R.id.tv_post2)
+                textView = findViewById<TextView>(R.id.tv_post4)
                 textView.text = "게시물 예시입니다4."
-
+                val button: Button = findViewById(R.id.bt_review4)
+                button.text = "Review"
+                button.setOnClickListener {
+                    setContentView(R.layout.activity_review4)
+                    textView = findViewById<TextView>(R.id.tv_review4)
+                    textView.text = "리뷰페이지 예시."
+                }
             }
         }
     }
