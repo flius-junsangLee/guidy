@@ -62,12 +62,19 @@ class MainActivity : AppCompatActivity() {
                 setContentView(R.layout.activity_post1)
                 textView = findViewById<TextView>(R.id.tv_post1)
                 textView.text = "게시물 예시입니다1."
-                val button: Button = findViewById(R.id.bt_review1)
-                button.text = "Review"
-                button.setOnClickListener {
+                val Reviewbutton: Button = findViewById(R.id.bt_review1)
+                Reviewbutton.text = "Review"
+                Reviewbutton.setOnClickListener {
                     setContentView(R.layout.activity_review1)
                     textView = findViewById<TextView>(R.id.tv_review1)
                     textView.text = "리뷰페이지 예시."
+                }
+                val paybutton: Button = findViewById(R.id.bt_pay1)
+                paybutton.text = "pay"
+                paybutton.setOnClickListener {
+                    setContentView(R.layout.activity_pay)
+                    textView = findViewById<TextView>(R.id.tv_pay1)
+                    textView.text = "결제페이지 예시"
                 }
             }
 
@@ -75,12 +82,19 @@ class MainActivity : AppCompatActivity() {
                 setContentView(R.layout.activity_post2)
                 textView = findViewById<TextView>(R.id.tv_post2)
                 textView.text = "게시물 예시입니다2."
-                val button: Button = findViewById(R.id.bt_review2)
-                button.text = "Review"
-                button.setOnClickListener {
+                val Reviewbutton: Button = findViewById(R.id.bt_review2)
+                Reviewbutton.text = "Review"
+                Reviewbutton.setOnClickListener {
                     setContentView(R.layout.activity_review2)
                     textView = findViewById<TextView>(R.id.tv_review2)
                     textView.text = "리뷰페이지 예시."
+                }
+                val paybutton: Button = findViewById(R.id.bt_pay2)
+                paybutton.text = "pay"
+                paybutton.setOnClickListener {
+                    setContentView(R.layout.activity_pay)
+                    textView = findViewById<TextView>(R.id.tv_pay1)
+                    textView.text = "결제페이지 예시"
                 }
             }
 
@@ -88,24 +102,38 @@ class MainActivity : AppCompatActivity() {
                 setContentView(R.layout.activity_post3)
                 textView = findViewById<TextView>(R.id.tv_post3)
                 textView.text = "게시물 예시입니다3."
-                val button: Button = findViewById(R.id.bt_review3)
-                button.text = "Review"
-                button.setOnClickListener {
+                val Reviewbutton: Button = findViewById(R.id.bt_review3)
+                Reviewbutton.text = "Review"
+                Reviewbutton.setOnClickListener {
                     setContentView(R.layout.activity_review3)
                     textView = findViewById<TextView>(R.id.tv_review3)
                     textView.text = "리뷰페이지 예시."
+                }
+                val paybutton: Button = findViewById(R.id.bt_pay3)
+                paybutton.text = "pay"
+                paybutton.setOnClickListener {
+                    setContentView(R.layout.activity_pay)
+                    textView = findViewById<TextView>(R.id.tv_pay1)
+                    textView.text = "결제페이지 예시"
                 }
             }
             3 -> {
                 setContentView(R.layout.activity_post4)
                 textView = findViewById<TextView>(R.id.tv_post4)
                 textView.text = "게시물 예시입니다4."
-                val button: Button = findViewById(R.id.bt_review4)
-                button.text = "Review"
-                button.setOnClickListener {
+                val Reviewbutton: Button = findViewById(R.id.bt_review4)
+                Reviewbutton.text = "Review"
+                Reviewbutton.setOnClickListener {
                     setContentView(R.layout.activity_review4)
                     textView = findViewById<TextView>(R.id.tv_review4)
                     textView.text = "리뷰페이지 예시."
+                }
+                val paybutton: Button = findViewById(R.id.bt_pay4)
+                paybutton.text = "pay"
+                paybutton.setOnClickListener {
+                    setContentView(R.layout.activity_pay)
+                    textView = findViewById<TextView>(R.id.tv_pay1)
+                    textView.text = "결제페이지 예시"
                 }
             }
         }
