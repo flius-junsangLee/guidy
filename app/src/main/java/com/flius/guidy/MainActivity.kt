@@ -59,14 +59,28 @@ class MainActivity : AppCompatActivity() {
     private fun profileDetail(position: Int){
         when (position) {
             0 -> {
-                setContentView(R.layout.activity_profile1)
-                val textView = findViewById<TextView>(R.id.tv_profile)
-                textView.text = "프로필 예시입니다."
+                setContentView(R.layout.activity_post1)
+                val textView = findViewById<TextView>(R.id.tv_post1)
+                textView.text = "프로필 예시입니다1."
             }
-            //1 -> setContentView(R.layout.layout_for_item_2)
-            //2 -> setContentView(R.layout.layout_for_item_3)
-            //3 -> setContentView(R.layout.layout_for_item_4)
-            //else -> setContentView(R.layout.default_layout)
+
+            1 -> {
+                setContentView(R.layout.activity_post2)
+                val textView = findViewById<TextView>(R.id.tv_post4)
+                textView.text = "프로필 예시입니다2."
+            }
+
+            2 -> {
+                setContentView(R.layout.activity_post3)
+                val textView = findViewById<TextView>(R.id.tv_post4)
+                textView.text = "프로필 예시입니다3."
+            }
+            3 ->{
+                setContentView(R.layout.activity_post4)
+                val textView = findViewById<TextView>(R.id.tv_post4)
+                textView.text = "프로필 예시입니다4."
+
+            }
         }
     }
 }

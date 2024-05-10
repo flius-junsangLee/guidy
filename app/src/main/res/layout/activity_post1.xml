@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/tv_profile"
+        android:id="@+id/tv_post1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="48sp"
@@ -14,5 +14,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="textexample" />
+        tools:text="post example" />
 </androidx.constraintlayout.widget.ConstraintLayout>
