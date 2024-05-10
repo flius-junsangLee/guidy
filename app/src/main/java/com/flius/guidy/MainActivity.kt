@@ -66,18 +66,18 @@ class MainActivity : AppCompatActivity() {
 
             1 -> {
                 setContentView(R.layout.activity_post2)
-                val textView = findViewById<TextView>(R.id.tv_post4)
+                val textView = findViewById<TextView>(R.id.tv_post2)
                 textView.text = "게시물 예시입니다2."
             }
 
             2 -> {
                 setContentView(R.layout.activity_post3)
-                val textView = findViewById<TextView>(R.id.tv_post4)
+                val textView = findViewById<TextView>(R.id.tv_post2)
                 textView.text = "게시물 예시입니다3."
             }
             3 ->{
                 setContentView(R.layout.activity_post4)
-                val textView = findViewById<TextView>(R.id.tv_post4)
+                val textView = findViewById<TextView>(R.id.tv_post2)
                 textView.text = "게시물 예시입니다4."
 
             }
