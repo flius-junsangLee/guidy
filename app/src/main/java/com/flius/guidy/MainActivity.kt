@@ -68,6 +68,10 @@ class MainActivity : AppCompatActivity() {
                 setContentView(R.layout.activity_post2)
                 val textView = findViewById<TextView>(R.id.tv_post2)
                 textView.text = "게시물 예시입니다2."
+                val button: Button = findViewById(R.id.bt_review1)
+                button.setOnClickListener {
+                    setContentView(R.layout.activity_review1) // 새 레이아웃 로드
+                }
             }
 
             2 -> {
