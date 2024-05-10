@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
         ProfileListView.adapter = adapter
 
         ProfileListView.setOnItemClickListener { parent, view, position, id ->
-           profileDetail(position)
+           postDetail(position)
         }
 
         setupAddButtonListener()
@@ -56,29 +56,29 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-    private fun profileDetail(position: Int){
+    private fun postDetail(position: Int){
         when (position) {
             0 -> {
                 setContentView(R.layout.activity_post1)
                 val textView = findViewById<TextView>(R.id.tv_post1)
-                textView.text = "프로필 예시입니다1."
+                textView.text = "게시 예시입니다1."
             }
 
             1 -> {
                 setContentView(R.layout.activity_post2)
                 val textView = findViewById<TextView>(R.id.tv_post4)
-                textView.text = "프로필 예시입니다2."
+                textView.text = "게시물 예시입니다2."
             }
 
             2 -> {
                 setContentView(R.layout.activity_post3)
                 val textView = findViewById<TextView>(R.id.tv_post4)
-                textView.text = "프로필 예시입니다3."
+                textView.text = "게시물 예시입니다3."
             }
             3 ->{
                 setContentView(R.layout.activity_post4)
                 val textView = findViewById<TextView>(R.id.tv_post4)
-                textView.text = "프로필 예시입니다4."
+                textView.text = "게시물 예시입니다4."
 
             }
         }
