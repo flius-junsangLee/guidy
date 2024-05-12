@@ -32,30 +32,21 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun profileList(){
+    fun profileList(){
         ProfileListView = findViewById(R.id.PostListView)
-        addprofile = findViewById(R.id.tv_addItem)
-        Button = findViewById(R.id.bt_profileAdd)
 
         adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, dataManager.getItems())
         ProfileListView.adapter = adapter
 
         ProfileListView.setOnItemClickListener { parent, view, position, id ->
            postDetail(position)
+
+
         }
 
-        setupAddButtonListener()
+
     }
-    private fun setupAddButtonListener() {
-        Button.setOnClickListener {
-            val newItem = addprofile.text.toString()
-            if (newItem.isNotEmpty()) {
-                dataManager.addItem(newItem)
-                adapter.notifyDataSetChanged()
-                addprofile.setText("")
-            }
-        }
-    }
+
     private fun postDetail(position: Int){
         when (position) {
             0 -> {
@@ -141,10 +132,6 @@ class MainActivity : AppCompatActivity() {
 }
 class ListDataManager {
     private val items = mutableListOf("때니", "빡기성", "민재몬", "이준상")
-
-    fun addItem(newItem: String) {
-        items.add(newItem)
-    }
 
     fun getItems(): List<String> {
         return items
