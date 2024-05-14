@@ -1,5 +1,4 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -29,7 +28,26 @@
         android:hint="비밀번호"
         android:inputType="textPassword"
         android:layout_margin="2dp"/>
+    <RadioGroup
+        android:id="@+id/rg_userType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
+        <RadioButton
+            android:id="@+id/bt_radioLocal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="내국인"
+            android:checked="true"/>
+
+        <RadioButton
+            android:id="@+id/bt_radioForeign"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="외국인"/>
+
+    </RadioGroup>
     <Button
         android:id="@+id/bt_Login"
         android:layout_width="match_parent"
@@ -45,11 +63,6 @@
         android:layout_gravity="center_horizontal"
         android:text="회원가입" />
 
-    <Button
-        android:id="@+id/bt_local"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:text="내국인" />
 
 
 </LinearLayout>
