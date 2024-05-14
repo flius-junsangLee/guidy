@@ -15,7 +15,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var tv_LoginPassword: EditText
     private lateinit var bt_Login: Button
     private lateinit var bt_GoToSignUp: Button
-    private lateinit var bt_local: Button
     private lateinit var bt_RadioLocal: RadioButton
     private lateinit var bt_RadioForeign: RadioButton
     private lateinit var rg_UserType: RadioGroup
