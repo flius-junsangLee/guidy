@@ -1,52 +1,50 @@
 package com.flius.guidy
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.widget.ArrayAdapter
-import android.widget.ListView
-import androidx.activity.enableEdgeToEdge
+import android.widget.Button
+import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.flius.guidy.R.id
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var profileListView: ListView
-    private lateinit var adapter: ArrayAdapter<String>
-    private val dataManager = ListDataManager()
+    private lateinit var tv_LoginEmail: EditText
+    private lateinit var tv_LoginPassword: EditText
+    private lateinit var bt_Login: Button
+    private lateinit var bt_GoToSignUp: Button
+    private lateinit var bt_local: Button
+    private var local = false
+
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+        setContentView(R.layout.activity_login)
 
+        tv_LoginEmail = findViewById(id.tv_LoginEmail)
+        tv_LoginPassword = findViewById(id.tv_LoginPassword)
+        bt_Login = findViewById(id.bt_Login)
+        bt_GoToSignUp = findViewById(id.bt_GoToSignUp)
+        bt_local = findViewById(id.bt_local)
+        bt_local.setOnClickListener {
+            local = !local
+            bt_local.text = if (local) "내국인" else "외국인"
         }
-        profileList()
-    }
-
-    private fun profileList() {
-        profileListView = findViewById(R.id.PostListView)
-        adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, dataManager.getItems())
-        profileListView.adapter = adapter
-
-        profileListView.setOnItemClickListener { _, _, position, _ ->
-            when (position) {
-                0 -> startActivity(Intent(this, PostActivity1::class.java))
-                1 -> startActivity(Intent(this, PostActivity2::class.java))
-                2 -> startActivity(Intent(this, PostActivity3::class.java))
-                3 -> startActivity(Intent(this, PostActivity4::class.java))
+        bt_Login.setOnClickListener {
+            // 등록 페이지로 이동함
+            if (local) {
+                val intent = Intent(this, RegistrationActivity::class.java)
+                startActivity(intent)
+            } else {
+                val intent = Intent(this, ProfileListActivity::class.java)
+                startActivity(intent)
             }
+        }
+
+        bt_GoToSignUp.setOnClickListener {
+            // 회원가입 페이지로 이동
+            val intent = Intent(this, SignUpActivity::class.java)
+            startActivity(intent)
         }
     }
 }
-    class ListDataManager {
-        private val items = mutableListOf("때니", "빡기성", "민재몬", "이준상")
-        fun getItems(): List<String> {
-            return items
-        }
-    }
-
-
-
